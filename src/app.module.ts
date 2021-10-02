@@ -4,6 +4,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose'
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
@@ -11,7 +12,8 @@ import { MongooseModule } from '@nestjs/mongoose'
   imports: [
     UsersModule,
     PostsModule,
-    MongooseModule.forRoot('mongodb+srv://netik2:300b798c4733de0$@cluster0.m2gd3.mongodb.net/blogv2?retryWrites=true&w=majority')
+    MongooseModule.forRoot('mongodb+srv://netik2:300b798c4733de0$@cluster0.m2gd3.mongodb.net/blogv2?retryWrites=true&w=majority'),
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -13,6 +13,7 @@ import { Users, UserSchema } from './schemas/user.schema';
             {name: Users.name, schema: UserSchema}
         ])
     ],
+    exports: [UsersService]
 })
 
 export class UsersModule {

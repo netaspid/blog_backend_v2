@@ -21,6 +21,11 @@ export class UsersService {
         return result
     }
 
+    getUserByName(name: string) {
+        let result = this.UserModel.findOne({name: name}).exec()
+        return result
+    }
+
     createUser(userDto: CreateUserDto) {
         let result = this.UserModel.create(userDto)
         return result
